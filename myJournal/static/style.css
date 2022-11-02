@@ -1,0 +1,25 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+#nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-link {
+    text-decoration: none;
+}
+
+.nav-container {
+    flex: 1;
+}
+
+#login {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}

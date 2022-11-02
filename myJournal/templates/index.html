@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+
+<nav>
+    <div class="nav-container">
+        <a href=""><img height="80" src="{% static 'myJournalLogo.svg' %}" alt="logo"></a>
+    </div>
+    <div class="nav-container" id="nav-links">
+        <a class="nav-link" href="#">Home</a>
+        <a class="nav-link" href="#">Compose a post</a>
+        <a class="nav-link" href="#">About us</a>
+    </div>
+    <div id='login' class="nav-container">
+        <button>Login</button>
+    </div>
+</nav>
+
+
+
+</body>
+</html>
+
+
