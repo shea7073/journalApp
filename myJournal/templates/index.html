@@ -18,8 +18,9 @@
         <a class="nav-link" href="#">Write post</a>
         <a class="nav-link" href="#">About</a>
     </div>
-    <div id='login' class="nav-container">
-        <button onclick="openNav()">Login</button>
+    <div id='header-right' class="nav-container">
+        <button class="login-btn">Login</button>
+        <button class="menu-btn" onclick="toggleNav()"><img height='25px' src="{% static 'list.svg' %}" alt=""></button>
     </div>
 </nav>
 
@@ -30,9 +31,8 @@
     </div>
 
 <script>
-    function openNav() {
-        document.getElementById('sidebar').style.width = '300px';
-
+    function toggleNav() {
+        document.getElementById('sidebar').classList.toggle('active');
     }
 
 </script>

@@ -32,30 +32,74 @@ nav {
     flex: 1;
 }
 
-#login {
+#header-right {
     display: flex;
     align-items: center;
     justify-content: end;
 }
 
 .sidebar {
-    width: 0px;
-    position: fixed;
+    position: absolute;
+    left: -300px;
+    width: 300px;
+    height: 100%;
     transition: .5s;
     background: #eee;
-    overflow: hidden;
-    left: 0;
     border-radius: 10px;
+}
+
+.sidebar.active {
+    left: 0;
 }
 
 
 .sidebar-link {
     display: block;
-    transition: 0.3s;
-    padding-top: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     padding-left: 20px;
 }
 
-.sidebar-link:last-of-type {
-    padding-bottom: 20px;
+.sidebar-link:hover {
+    background: #ddd;
+}
+
+.menu-btn {
+    display: none;
+    padding: 12px;
+    border-radius: 6px;
+    background: white;
+    border: 2px solid grey;
+}
+
+.menu-btn:hover {
+    background-color: #e6e6e6;
+}
+
+.login-btn {
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 6px;
+    background-color: #0275d8;
+    color: #FAF9F6;
+    border: none;
+}
+
+.login-btn:hover {
+    background-color: #025fb1;
+}
+
+@media (max-width: 600px) {
+    #nav-links {
+      display: none;
+    }
+
+    .login-btn {
+        display: none;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
 }
