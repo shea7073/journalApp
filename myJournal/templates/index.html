@@ -14,8 +14,8 @@
         <a href=""><img height="80" src="{% static 'myJournalLogo.svg' %}" alt="logo"></a>
     </div>
     <div class="nav-container" id="nav-links">
-        <a class="nav-link" href="#">Home</a>
-        <a class="nav-link" href="#">Write post</a>
+        <a class="nav-link" href="{% url 'home' %}">Home</a>
+        <a class="nav-link" href="{% url 'addPost' %}">Write post</a>
         <a class="nav-link" href="#">About</a>
     </div>
     <div id='header-right' class="nav-container">
@@ -25,10 +25,16 @@
 </nav>
 
     <div class="sidebar" id="sidebar">
-        <a class='sidebar-link' href="#">Home</a>
-        <a class='sidebar-link' href="#">Write Post</a>
+        <a class='sidebar-link' href="{% url 'home' %}">Home</a>
+        <a class='sidebar-link' href="{% url 'addPost' %}">Write Post</a>
         <a class='sidebar-link' href="#">About</a>
     </div>
+
+
+{% block content %}
+{% endblock %}
+
+
 
 <script>
     function toggleNav() {
