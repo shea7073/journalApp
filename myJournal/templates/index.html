@@ -15,21 +15,33 @@
     </div>
     <div class="nav-container" id="nav-links">
         <a class="nav-link" href="{% url 'home' %}">Home</a>
+        <a class="nav-link" href="#">My Journal</a>
         <a class="nav-link" href="{% url 'addPost' %}">Write post</a>
         <a class="nav-link" href="#">About</a>
     </div>
     <div id='header-right' class="nav-container">
-        <button class="login-btn">Login</button>
+        {% if user.is_authenticated %}
+        <a style="text-decoration: none;" class="login-btn" href="{% url 'logout' %}">Logout</a>
+        {% else %}
+        <a style="text-decoration: none;" class="login-btn" href="{% url 'login' %}">Login</a>
+        {% endif %}
         <button class="menu-btn" onclick="toggleNav()"><img height='25px' src="{% static 'list.svg' %}" alt=""></button>
     </div>
 </nav>
 
     <div class="sidebar" id="sidebar">
         <a class='sidebar-link' href="{% url 'home' %}">Home</a>
+        <a class='sidebar-link' href="#">My Journal</a>
         <a class='sidebar-link' href="{% url 'addPost' %}">Write Post</a>
         <a class='sidebar-link' href="#">About</a>
+        <a class='sidebar-link' href="{% url 'login' %}">Login</a>
     </div>
 
+        {% if messages %}
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+        {% endif %}
 
 {% block content %}
 {% endblock %}
