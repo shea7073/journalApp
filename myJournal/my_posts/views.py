@@ -1,16 +1,14 @@
 from django.shortcuts import render
 from post.models import Post
 from django.core.paginator import Paginator
+from django.views.generic.dates import DayArchiveView
+
 
 # Create your views here.
-def show_posts(request):
-    user_posts = Post.objects.filter(owner=request.user)
+class PostDayArchiveView(DayArchiveView):
 
-    p = Paginator(Post.objects.filter(owner=request.user).order_by('post_date'), 1)
-    page = request.GET.get('page')
-    if not page:
-        page = p.num_pages
-    posts = p.get_page(page)
+    date_field = 'post_date'
+    #month_format = '%m'
 
-
-    return render(request, 'my_posts.html/' , {'user_posts': user_posts, 'posts': posts})
+    def get_queryset(self):
+        return Post.objects.filter(owner=self.request.user)

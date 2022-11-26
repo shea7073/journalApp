@@ -1,0 +1,37 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block title %}
+My posts
+{% endblock %}
+
+{% block more_styles %}
+<link rel="stylesheet" href="{% static 'login_styles.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<h1>{{ day }}</h1>
+<h1>{{ day.year }}</h1>
+<h1>{{ day.month }}</h1>
+<h1>{{ day.day }}</h1>
+
+<ul>
+    {% for post in object_list %}
+        <li>{{ post.title }}</li>
+        <li>{{ post.body|safe }}</li>
+    {% endfor %}
+</ul>
+
+<p>
+    {% if previous_day %}
+        Previous Day: {{ previous_day }}
+    {% endif %}
+    {% if previous_day and next_day %}--{% endif %}
+    {% if next_day %}
+        Next Day: {{ next_day }}
+    {% endif %}
+</p>
+
+{% endblock %}

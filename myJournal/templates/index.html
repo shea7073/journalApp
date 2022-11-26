@@ -17,7 +17,7 @@
     <div class="nav-container" id="nav-links">
         <a class="nav-link" href="{% url 'home' %}">Home</a>
         {% if user.is_authenticated %}
-        <a class="nav-link" href="{% url 'show_posts' %}">My Journal</a>
+    <a class="nav-link" href="{% url 'archive_day' day.year day.month day.day %}">My Journal</a>
         <a class="nav-link" href="{% url 'addPost' %}">Write post</a>
         {% endif %}
         <a class="nav-link" href="#">About</a>
@@ -35,7 +35,7 @@
     <div class="sidebar" id="sidebar">
         <a class='sidebar-link' href="{% url 'home' %}">Home</a>
         {% if user.is_authenticated %}
-    <a class='sidebar-link' href="{% url 'show_posts' %}">My Journal</a>
+        <a class='sidebar-link' href="{% url 'archive_day' day.year day.month day.day %}">My Journal</a>
         <a class='sidebar-link' href="{% url 'addPost' %}">Write Post</a>
         {% endif %}
         <a class='sidebar-link' href="#">About</a>
