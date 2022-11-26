@@ -1,4 +1,9 @@
 {% extends 'index.html' %}
+{% load static %}
+
+{% block more_styles %}
+<link rel="stylesheet" href="{% static 'login_styles.css' %}">
+{% endblock %}
 
 {% block content %}
 
@@ -15,5 +20,7 @@
 
     <input type="submit" name="" id="" value="Submit">
 </form>
+
+<h1> TESTING </h1>
 
 {% endblock %}
