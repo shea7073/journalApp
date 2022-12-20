@@ -7,31 +7,40 @@ My posts
 {% endblock %}
 
 {% block more_styles %}
-<link rel="stylesheet" href="{% static 'login_styles.css' %}">
+<link rel="stylesheet" href="{% static 'my_posts.css' %}">
 {% endblock %}
 
 {% block content %}
 
-<h1>{{ day }}</h1>
-<h1>{{ day.year }}</h1>
-<h1>{{ day.month }}</h1>
-<h1>{{ day.day }}</h1>
+<div class="post_header"><h1>{{ day }}</h1></div>
 
-<ul>
-    {% for post in object_list %}
-        <li>{{ post.title }}</li>
-        <li>{{ post.body|safe }}</li>
-    {% endfor %}
-</ul>
 
-<p>
-    {% if previous_day %}
-    Previous Day: <a href="{% url 'archive_day' previous_day.year previous_day.month previous_day.day %}">{{ previous_day }}</a>
-    {% endif %}
-    {% if previous_day and next_day %}--{% endif %}
-    {% if next_day %}
-    Next Day: <a href="{% url 'archive_day' next_day.year next_day.month next_day.day %}">{{ next_day }}</a>
-    {% endif %}
-</p>
+
+{% for post in object_list %}
+    <div class="post_container">
+        <h1 class="post_title">{{ post.title }}</h1>
+        <p class="post_body">{{ post.body|safe }}</p>
+    </div>
+
+{% endfor %}
+
+
+<div class="day_navigation">
+    <div>
+        {% if previous_day %}
+        Previous Day: <a href="{% url 'archive_day' previous_day.year previous_day.month previous_day.day %}">{{ previous_day }}</a>
+        {% endif %}
+    </div>
+    <div>{% if previous_day and next_day %}--{% endif %}</div>
+    <div>
+        {% if next_day %}
+        Next Day: <a href="{% url 'archive_day' next_day.year next_day.month next_day.day %}">{{ next_day }}</a>
+        {% endif %}
+    </div>
+
+
+
+
+</div>
 
 {% endblock %}

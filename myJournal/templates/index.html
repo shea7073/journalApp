@@ -62,6 +62,15 @@
         document.getElementById('sidebar').classList.toggle('active');
     }
 
+    function hideSidebar() {
+        let width = document.body.clientWidth;
+        if (width > 1200) {
+            document.getElementById('sidebar').classList.remove('active');
+        }
+    }
+
+    window.onresize = hideSidebar;
+
 </script>
 
 </body>

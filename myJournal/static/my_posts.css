@@ -1,0 +1,15 @@
+.post_header {
+    text-align: center;
+}
+
+.post_container {
+    text-align: center;
+    border: 1px solid gray;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.day_navigation {
+    display: flex;
+    justify-content: space-between;
+}
