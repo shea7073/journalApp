@@ -10,7 +10,5 @@ class PostDayArchiveView(DayArchiveView):
     date_field = 'post_date'
     month_format = '%m'
 
-    extra_context
-
     def get_queryset(self):
         return Post.objects.filter(owner=self.request.user)
