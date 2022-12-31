@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block more_styles %}
-<link rel="stylesheet" href="{% static 'login_styles.css' %}">
+<link rel="stylesheet" href="{% static 'login.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -11,16 +11,20 @@
 
 <form action="" method=POST>
     {% csrf_token %}
+    <div class="login-container">
+        <div class="login-item">
+            <label for="user_email">Username: </label>
+            <input type="text" name="username" id="">
+        </div>
+        <div class="login-item">
+            <label for="user_password">Password: </label>
+            <input type="password" name="user_password" id="">
+        </div>
+        <div class="login-item">
+            <input type="submit" name="" id="" value="Submit">
+        </div>
+    </div>
 
-    <label for="user_email">Username: </label>
-    <input type="text" name="username" id="">
-
-    <label for="user_password">Password: </label>
-    <input type="password" name="user_password" id="">
-
-    <input type="submit" name="" id="" value="Submit">
 </form>
-
-<h1> TESTING </h1>
 
 {% endblock %}

@@ -18,6 +18,7 @@ My posts
 
 {% for post in object_list %}
     <div class="post_container">
+        <h1>{{ post.post_time }}</h1>
         <h1 class="post_title">{{ post.title }}</h1>
         <p class="post_body">{{ post.body|safe }}</p>
     </div>

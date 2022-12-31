@@ -4,7 +4,6 @@ from django.core.paginator import Paginator
 from django.views.generic.dates import DayArchiveView
 
 
-# Create your views here.
 class PostDayArchiveView(DayArchiveView):
 
     date_field = 'post_date'

@@ -9,3 +9,4 @@ class Post(models.Model):
     title = CharField(max_length=250, default='title')
     body = RichTextField(blank=True, null=True)
     post_date = models.DateField(auto_now_add=True)
+    post_time = models.TimeField(auto_now_add=True)
