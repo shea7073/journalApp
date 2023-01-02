@@ -1,1 +1,37 @@
 {% extends 'index.html' %}
+
+{% load static %}
+
+{% block more_styles %}
+<link rel="stylesheet" href="{% static 'home.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="banner-container">
+    <img class='home-banner' src="{% static 'home_banner.png' %}" alt="home-banner">
+    <button class="btn">Sign up free!</button>
+</div>
+
+<h1>Bringing Journaling into the 21st Century</h1>
+
+<div class="card-container">
+    <div class="card">
+        <strong>Access anywhere</strong>
+        <p>Write from any device, no matter where life takes you.</p>
+        <div><img class='icon' src="{% static 'planet-earth.png' %}" alt="earth-icon" height="48px"></div>
+
+    </div>
+    <div class="card">
+        <strong>Always encrypted</strong>
+        <p>We worry about security so you don't have to. </p>
+        <div><img class='icon' src="{% static 'lock.png' %}" alt="lock-icon" height="48px"></div>
+    </div>
+    <div class="card">
+        <strong>Unlimited storage</strong>
+        <p>No pen? Lame. No room in your bag? Lame. Keep your journal in your pocket no matter how much you write.</p>
+        <div><img class='icon' src="{% static 'server.png' %}" alt="server-icon" height="48px"></div>
+    </div>
+</div>
+
+
+{% endblock %}

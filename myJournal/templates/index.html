@@ -17,10 +17,8 @@
     <div class="nav-container" id="nav-links">
         <a class="nav-link" href="{% url 'home' %}">Home</a>
         {% if user.is_authenticated %}
-            {% if post_day != None %}
-            <a class="nav-link" href="{% url 'archive_day' year month post_day %}">My Journal</a>
-            <a class="nav-link" href="{% url 'addPost' %}">Write post</a>
-            {% endif %}
+        <a class="nav-link" href="{% url 'archive_day' year month post_day %}">My Journal</a>
+        <a class="nav-link" href="{% url 'addPost' %}">Write post</a>
         {% endif %}
         <a class="nav-link" href="#">About</a>
     </div>
