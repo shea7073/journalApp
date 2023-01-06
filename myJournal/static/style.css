@@ -105,3 +105,61 @@ nav {
     }
 
 }
+
+@media (min-device-width: 3840px) {
+    .nav-container, .sidebar {
+        font-size: 1.5rem;
+    }
+
+    #logo {
+        height: 120px;
+    }
+
+    .login-btn {
+        font-size: 1.5rem;
+        padding: 16px;
+    }
+
+    .menu-btn img {
+        height: 45px;
+    }
+
+    @media (min-width: 1200px) and (max-width: 1503px) {
+        #header-right {
+            flex: 0;
+        }
+        #nav-logo {
+            flex: 0;
+        }
+        #nav-links {
+            justify-content: center;
+        }
+
+        nav {
+            justify-content: space-between;
+        }
+    }
+
+}
+
+@media (min-device-width: 2560px) and (max-device-width: 3839px){
+    .nav-container, .sidebar {
+        font-size: 1.25rem;
+    }
+    @media (min-width: 1200px) and (max-width: 1327px) {
+        #header-right {
+            flex: 0;
+        }
+        #nav-logo {
+            flex: 0;
+        }
+        #nav-links {
+            justify-content: center;
+        }
+
+        nav {
+            justify-content: space-between;
+        }
+    }
+}
+

@@ -2,29 +2,34 @@
 {% load static %}
 
 {% block more_styles %}
-<link rel="stylesheet" href="{% static 'login.css' %}">
+    <link rel="stylesheet" href="{% static 'login.css' %}">
 {% endblock %}
 
 {% block content %}
+        <div class="login-banner-container">
 
-<h1>Login</h1>
+            <img class="login-banner" src="{% static 'login_banner.png' %}" alt="">
 
-<form action="" method=POST>
-    {% csrf_token %}
-    <div class="login-container">
-        <div class="login-item">
-            <label for="user_email">Username: </label>
-            <input type="text" name="username" id="">
-        </div>
-        <div class="login-item">
-            <label for="user_password">Password: </label>
-            <input type="password" name="user_password" id="">
-        </div>
-        <div class="login-item">
-            <input type="submit" name="" id="" value="Submit">
-        </div>
-    </div>
+            <form class="login-form" action="" method=POST>
+                {% csrf_token %}
+                <div class="login-container">
+                    <div class="login-item">
+                        <!--            <label for="user_email">Username: </label>-->
+                        <input type="text" name="username" id="username" placeholder="Username">
+                    </div>
+                    <div class="login-item">
+                        <!--            <label for="user_password">Password: </label>-->
+                        <input type="password" name="user_password" id="password" placeholder="Password">
+                    </div>
+                    <div class="login-item">
+                        <input type="submit" name="" id="" value="Submit">
+                    </div>
+                </div>
 
-</form>
+            </form>
+        </div>
+
+
+
 
 {% endblock %}

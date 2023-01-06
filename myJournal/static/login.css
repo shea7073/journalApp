@@ -8,6 +8,25 @@
     margin: .75rem;
 }
 
-h1 {
-    text-align: center;
+.login-banner-container {
+    position: relative;
+    width: 100%;
+}
+
+.login-banner{
+    width: 100%;
+    height: auto;
+}
+
+.login-form {
+    position: absolute;
+    left: 67%;
+    top: 30%;
+}
+
+@media (min-device-width: 3840px) {
+    #username, #password {
+        height: 2rem;
+        font-size: 2rem;
+    }
 }
