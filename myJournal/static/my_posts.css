@@ -3,7 +3,7 @@
 }
 
 .post_container {
-    text-align: center;
+    text-align: left;
     border: 1px solid gray;
     border-radius: 20px;
     margin-bottom: 10px;
@@ -20,6 +20,7 @@
 
 .post_title {
     text-align: left;
+    color: black;
 }
 
 .time_stamp {
@@ -27,7 +28,7 @@
 }
 
 .post_body ~ *{
-    font-size: 4rem;
+
 }
 
 @media (max-width: 1200px) {

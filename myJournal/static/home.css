@@ -37,6 +37,7 @@ h1 {
     background-color: #faf9f6;
     display: flex;
     justify-content: center;
+    margin-bottom: 0;
 }
 
 .card strong {

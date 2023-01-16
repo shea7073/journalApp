@@ -1,0 +1,12 @@
+.form-container {
+    width: 75%;
+    margin: auto;
+}
+
+#id_title {
+    width: 300px;
+}
+
+h1 {
+    text-align: center;
+}

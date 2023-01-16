@@ -12,52 +12,81 @@
 
 <nav>
     <div class="nav-container" id="nav-logo">
-        <a href=""><img id='logo' height="80" src="{% static 'myJournalLogo.svg' %}" alt="logo"></a>
+        <a href="{% url 'home' %}"><img id='logo' height="80" src="{% static 'myJournalLogo.svg' %}" alt="logo"></a>
     </div>
     <div class="nav-container" id="nav-links">
         <a class="nav-link" href="{% url 'home' %}">Home</a>
         {% if user.is_authenticated %}
-        <a class="nav-link" href="{% url 'archive_day' year month post_day %}">My Journal</a>
-        <a class="nav-link" href="{% url 'addPost' %}">Write post</a>
+            <a class="nav-link" href="{% url 'archive_day' year month post_day %}">My Journal</a>
+            <a class="nav-link" href="{% url 'addPost' %}">Write post</a>
         {% endif %}
         <a class="nav-link" href="#">About</a>
     </div>
     <div id='header-right' class="nav-container">
         {% if user.is_authenticated %}
-        <a style="text-decoration: none; color: white;" class="login-btn" href="{% url 'logout' %}">Logout, {{ user.username }}?</a>
+            <a style="text-decoration: none; color: white;" class="login-btn"
+               href="{% url 'logout' %}">Logout, {{ user.username }}?</a>
         {% else %}
-        <a style="text-decoration: none; color: white;" class="login-btn" href="{% url 'login' %}">Login/Signup</a>
+            <a style="text-decoration: none; color: white;" class="login-btn" href="{% url 'login' %}">Login/Signup</a>
         {% endif %}
         <button class="menu-btn" onclick="toggleNav()"><img height='25px' src="{% static 'list.svg' %}" alt=""></button>
     </div>
 </nav>
 
-    <div class="sidebar" id="sidebar">
-        <a class='sidebar-link' href="{% url 'home' %}">Home</a>
-        {% if user.is_authenticated %}
-            {% if year != 0 %}
+<div class="sidebar" id="sidebar">
+    <a class='sidebar-link' href="{% url 'home' %}">Home</a>
+    {% if user.is_authenticated %}
+        {% if year != 0 %}
             <a class='sidebar-link' href="{% url 'archive_day' year month post_day %}">My Journal</a>
-            {% endif %}
+        {% endif %}
         <a class='sidebar-link' href="{% url 'addPost' %}">Write Post</a>
-        {% endif %}
-        <a class='sidebar-link' href="#">About</a>
-        {% if user.is_authenticated %}
+    {% endif %}
+    <a class='sidebar-link' href="#">About</a>
+    {% if user.is_authenticated %}
         <a class='sidebar-link' href="{% url 'logout' %}">Logout, {{ user.username }}?</a>
-        {% else %}
+    {% else %}
         <a class='sidebar-link' href="{% url 'login' %}">Login/Signup</a>
-        {% endif %}
-    </div>
+    {% endif %}
+</div>
 
-        {% if messages %}
-            {% for message in messages %}
-                {{ message }}
-            {% endfor %}
-        {% endif %}
+{% if messages %}
+    {% for message in messages %}
+        <div id="message-container">
+            <div>{{ message }} </div>
+            <button onclick="hideMessage()">x</button>
+        </div>
+
+    {% endfor %}
+{% endif %}
 
 {% block content %}
 {% endblock %}
 
+<footer>
+    <h4>MyJournal - Secure, Everywhere</h4>
+    <div class="footer-container">
+        <div class="contact">
+            <h6><strong>Contact</strong></h6>
+            <ul>
+                <li>Sean Shea</li>
+                <li>shea7073@gmail.com</li>
+                <li>781.470.0262</li>
+                <li>Boston, Massachusetts</li>
+            </ul>
+        </div>
+        <div class="footer-nav">
+            <a href="{% url 'home' %}">Home</a>
+            {% if user.is_authenticated %}
+                {% if year != 0 %}
+                    <a href="{% url 'archive_day' year month post_day %}">My Journal</a>
+                {% endif %}
+                    <a href="{% url 'addPost' %}">Write Post</a>
+            {% endif %}
+                    <a href="#">About</a>
+        </div>
+    </div>
 
+</footer>
 
 <script>
     function toggleNav() {
@@ -73,9 +102,11 @@
 
     window.onresize = hideSidebar;
 
+    function hideMessage() {
+        document.getElementById('message-container').style.display = 'none';
+    }
+
 </script>
 
 </body>
 </html>
-
-

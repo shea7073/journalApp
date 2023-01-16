@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 
 class Post(models.Model):
     owner = models.ForeignKey(to=User, on_delete=models.CASCADE)
-    title = CharField(max_length=250, default='title')
+    title = CharField(max_length=250, default='Today was...')
     body = RichTextField(blank=True, null=True)
     post_date = models.DateField(auto_now_add=True)
     post_time = models.TimeField(auto_now_add=True)

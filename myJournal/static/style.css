@@ -90,6 +90,49 @@ nav {
     background-color: #025fb1;
 }
 
+#message-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    background-color: #0275d8;
+    opacity: 0.9;
+    color: black;
+    margin: 5px;
+    border-radius: 3px;
+}
+
+#message-container button {
+    border: none;
+    border-radius: 3px;
+}
+
+footer {
+    background-image: url("footer-bg.jpg");
+    height: 500px;
+    margin: 0;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer h6 {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.footer-nav a {
+    color: #777;
+    font-size: .8rem;
+}
+
 
 @media (max-width: 1200px) {
     #nav-links {
@@ -132,7 +175,7 @@ nav {
             flex: 0;
         }
         #nav-links {
-            justify-content: center;
+            justify-items: center;
         }
 
         nav {
