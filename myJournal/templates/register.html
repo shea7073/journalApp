@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+
+{% if messages %}
+    {% for message in messages %}
+        <div id="message-container">
+            <div>{{ message }} </div>
+            <button onclick="hideMessage()">x</button>
+        </div>
+
+    {% endfor %}
+{% endif %}
+
+<form action="" method="post">
+
+{% csrf_token %}
+
+{{ form.as_p }}
+
+<input type="submit" name="" id="">
+
+</form>
+
+
+{% endblock %}

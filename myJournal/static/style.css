@@ -1,6 +1,7 @@
 * {
     font-family: sans-serif;
     color: #555;
+    margin: 0;
 }
 
 nav {
@@ -94,9 +95,7 @@ nav {
     display: flex;
     justify-content: space-between;
     padding: 5px;
-    background-color: #0275d8;
-    opacity: 0.9;
-    color: black;
+    background-color: #0275d828;
     margin: 5px;
     border-radius: 3px;
 }
@@ -104,18 +103,35 @@ nav {
 #message-container button {
     border: none;
     border-radius: 3px;
+    opacity: 1;
 }
 
 footer {
     background-image: url("footer-bg.jpg");
-    height: 500px;
+    height: 250px;
     margin: 0;
+    padding: 15px;
 }
 
 .footer-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 15px;
+}
+
+footer li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+h6 {
+    text-align: center;
+}
+
+.contact {
+    line-height: 1.75;
 }
 
 .contact ul {
@@ -130,7 +146,8 @@ footer h6 {
 
 .footer-nav a {
     color: #777;
-    font-size: .8rem;
+    font-size: .9rem;
+    margin: 8px;
 }
 
 

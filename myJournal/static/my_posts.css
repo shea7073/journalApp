@@ -1,5 +1,6 @@
 .post_header {
     text-align: center;
+    padding: 15px;;
 }
 
 .post_container {
@@ -16,19 +17,21 @@
 .day_navigation {
     display: flex;
     justify-content: space-between;
+    margin: 0 75px 10px 75px;
 }
 
 .post_title {
     text-align: left;
     color: black;
+    padding: 15px;
 }
 
 .time_stamp {
     text-align: left;
 }
 
-.post_body ~ *{
-
+hr {
+    margin-bottom: 10px;;
 }
 
 @media (max-width: 1200px) {

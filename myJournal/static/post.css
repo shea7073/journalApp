@@ -1,12 +1,50 @@
+h1 {
+    padding: 15px;
+}
+
 .form-container {
     width: 75%;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+form > * {
+    margin: 15px;;
+}
+
+input[type="submit"] {
+    display: block;
+    margin: auto;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    border: none;
+    padding: 10px;
+    background-color: #0275d8;
+    color: white;
+}
+
+input[type="submit"]:hover {
+    background-color: #025fb1;
 }
 
 #id_title {
     width: 300px;
+
+    font-size: 1.35rem;
 }
 
 h1 {
     text-align: center;
+}
+
+.django-ckeditor-widget {
+
+}
+
+label {
+    font-size: 1.35rem;
+    margin-right: 10px;
 }
